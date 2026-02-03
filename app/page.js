@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { getPosts } from "@/services/sanityService";
 import { urlFor } from "@/lib/sanity";
+import ComtactForm from "@/components/ContactForm";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -128,9 +129,10 @@ export default function Home() {
               <p className="text-gray-400 italic">No stories published yet. Head to Sanity Studio to add one!</p>
             )}
           </div>
-
         </div>
       </section>
+
+      <ComtactForm />
     </main>
   );
 }
