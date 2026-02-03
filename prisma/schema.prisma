@@ -1,0 +1,27 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // provider = "postgresql" 
+  provider = "sqlite" 
+}
+
+model Inquiry {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  name      String
+  email     String
+  type      String   // e.g., "Construction", "Training", "Agribusiness"
+  message   String
+}
+
+model Trainee {
+  id        String   @id @default(cuid())
+  name      String
+  country   String   // Ghana, Togo, Benin, Nigeria, or Liberia
+  year      Int      // Graduation year
+  skill     String   // e.g., "Masonry", "Electrical", "Bio-gas"
+  story     String?  //@db.Text
+}
