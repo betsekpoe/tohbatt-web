@@ -1,9 +1,11 @@
 "use client"; // Required for Framer Motion
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { getPosts } from "@/services/sanityService";
 import { urlFor } from "@/lib/sanity";
 import ComtactForm from "@/components/ContactForm";
+import HeroSlider from "@/components/HeroSlider";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -28,7 +30,7 @@ export default function Home() {
             </p>
             <div className="flex gap-4 mt-10">
               <button className="bg-toh-gold text-toh-navy px-8 py-4 rounded-sm font-black uppercase text-sm tracking-wider">
-                Our Projects
+                <Link href="/projects">Our Projects</Link>
               </button>
               <button className="border-2 border-white px-8 py-4 rounded-sm font-black uppercase text-sm tracking-wider">
                 Learn Skills
@@ -105,26 +107,26 @@ export default function Home() {
           {/* Posts Grid */}
           <div className="grid md:grid-cols-3 gap-8">
             {posts.length > 0 ? posts.map((post, index) => (
-
-              /* Single Post Card */
-              <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg group cursor-pointer">
-                <div className="h-48 overflow-hidden bg-gray-200">
-                  {post.mainImage && (
-                    <img
-                      src={urlFor(post.mainImage).url()}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  )}
+              <Link href={`/stories/${post.slug}`} key={index}>
+                {/* Single Post Card */}
+                <div className="bg-white rounded-xl overflow-hidden shadow-lg group cursor-pointer h-full">
+                  <div className="h-48 overflow-hidden bg-gray-200">
+                    {post.mainImage && (
+                      <img
+                        src={urlFor(post.mainImage).url()}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    )}
+                  </div>
+                  <div className="p-6">
+                    <span className="text-xs font-bold text-toh-gold uppercase tracking-widest">{post.category}</span>
+                    <h3 className="text-xl font-bold text-toh-navy mt-2 mb-3 leading-tight">{post.title}</h3>
+                    <p className="text-gray-600 text-sm line-clamp-3 mb-4">{post.body}</p>
+                    <div className="text-toh-navy font-bold text-xs uppercase">Read All →</div>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <span className="text-xs font-bold text-toh-gold uppercase tracking-widest">{post.category}</span>
-                  <h3 className="text-xl font-bold text-toh-navy mt-2 mb-3 leading-tight">{post.title}</h3>
-                  <p className="text-gray-600 text-sm line-clamp-3 mb-4">{post.body}</p>
-                  <div className="text-toh-navy font-bold text-xs uppercase">Read All →</div>
-                </div>
-              </div>
-
+              </Link>
             )) : (
               <p className="text-gray-400 italic">No stories published yet. Head to Sanity Studio to add one!</p>
             )}

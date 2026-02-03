@@ -1,20 +1,27 @@
+/* app/globals.css */
 @import "tailwindcss";
 
+/* Add the typography plugin for blog content */
+@plugin "@tailwindcss/typography";
+
 @theme {
-  --color-toh-navy: #002147;
-  --color-toh-gold: #D4AF37;
-  --color-toh-green: #2D5A27;
+  /* Official TOHBATT Palette from Specification */
+  --color-toh-navy: #002147;   /* Industrial Trust */
+  --color-toh-gold: #FFB400;   /* Innovation & Action */
+  --color-toh-green: #2D5A27;  /* Agribusiness & PGLP */
   --color-toh-light: #F8F9FA;
+  
+  /* Adding custom spacing/radii to keep the "Modern Look" */
+  --radius-toh: 1.5rem;
 }
 
 :root {
   --background: #ffffff;
-  --foreground: #002147; /* TOHBATT Navy */
+  --foreground: var(--color-toh-navy);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  margin: 0;
-  padding: 0;
+  font-family: ui-sans-serif, system-ui, sans-serif;
 }

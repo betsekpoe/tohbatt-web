@@ -25,3 +25,13 @@ model Trainee {
   skill     String   // e.g., "Masonry", "Electrical", "Bio-gas"
   story     String?  //@db.Text
 }
+
+model Student {
+  id        Int      @id @default(autoincrement())
+  fullName  String
+  email     String   @unique
+  phone     String
+  course    String   // e.g., Bio-gas Construction, Masonry, Agribusiness
+  location  String   // Ghana or Liberia
+  createdAt DateTime @default(now())
+}
