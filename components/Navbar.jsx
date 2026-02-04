@@ -3,10 +3,12 @@ import Link from 'next/link';
 export default function Navbar() {
   return (
     <nav className="flex justify-between items-center px-8 py-6 bg-white border-b border-gray-100 sticky top-0 z-50">
-      <div className="flex items-center gap-2">
-        <div className="w-10 h-10 bg-toh-navy rounded-lg flex items-center justify-center text-toh-gold font-bold text-xl">T</div>
-        <span className="text-2xl font-black tracking-tighter text-toh-navy">TOHBATT</span>
-      </div>
+      <Link href="/">
+        <div className="flex items-center gap-2">
+          <div className="w-10 h-10 bg-toh-navy rounded-lg flex items-center justify-center text-toh-gold font-bold text-xl">T</div>
+          <span className="text-2xl font-black tracking-tighter text-toh-navy">TOHBATT</span>
+        </div>
+      </Link>
       
       <div className="hidden md:flex gap-8 font-medium text-toh-navy">
         <Link href="/" className="hover:text-toh-gold transition-colors">Home</Link>

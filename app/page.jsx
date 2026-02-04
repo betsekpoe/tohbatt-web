@@ -1,11 +1,32 @@
 "use client"; // Required for Framer Motion
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { motion, useInView, animate } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { getPosts } from "@/services/sanityService";
 import { urlFor } from "@/lib/sanity";
 import ComtactForm from "@/components/ContactForm";
 import HeroSlider from "@/components/HeroSlider";
+
+function Counter({ value }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  
+  useEffect(() => {
+    if (isInView) {
+      const node = ref.current;
+      const controls = animate(0, value, {
+        duration: 2,
+        ease: "easeOut",
+        onUpdate(latest) {
+          if (node) node.textContent = Math.round(latest);
+        },
+      });
+      return () => controls.stop();
+    }
+  }, [isInView, value]);
+
+  return <span ref={ref}>0</span>;
+}
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -17,7 +38,7 @@ export default function Home() {
   return (
     <main className="relative">
       {/* Hero Section */}
-      <section className="bg-toh-navy text-white pt-24 pb-32 px-8">
+      {/* <section className="bg-toh-navy text-white pt-24 pb-32 px-8">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
             <span className="text-toh-gold font-bold tracking-widest uppercase text-sm">Now in Ghana & Liberia</span>
@@ -39,24 +60,32 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            {/* Visual element representing a modern construction site */}
+            {/* Visual element representing a modern construction site *
             <div className="aspect-square bg-toh-green rounded-2xl opacity-20 absolute -top-4 -right-4 w-full h-full -z-10"></div>
             <div className="aspect-square bg-gray-800 rounded-2xl overflow-hidden border-4 border-toh-gold shadow-2xl flex items-center justify-center">
               <span className="text-gray-500 italic">[Project Image Placeholder]</span>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <HeroSlider />
+
 
       {/* Services Section */}
       <section className="py-24 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 py-10 rounded-full border border-toh-gold">
+            <h2 className="text-toh-navy text-3xl font-extrabold uppercase tracking-tight">
+              <Counter value={120} />+ Workers Trained
+            </h2>
+          </div>
+
           <div className="text-center mb-16">
-            <h2 className="text-toh-navy text-4xl font-black uppercase tracking-tight">Our Core Pillars</h2>
+            <h2 className="text-toh-navy text-4xl font-black uppercase tracking-tight">What We Do</h2>
             <div className="w-20 h-1 bg-toh-gold mx-auto mt-4"></div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {[
               {
                 title: "Construction",
@@ -68,11 +97,6 @@ export default function Home() {
                 desc: "Empowering 120+ workers across West Africa with certified technical skills.",
                 icon: "🎓"
               },
-              {
-                title: "Agribusiness",
-                desc: "Developing PGLP Agribusiness modules for sustainable food security.",
-                icon: "🌱"
-              }
             ].map((service, index) => (
               <motion.div
                 key={index}

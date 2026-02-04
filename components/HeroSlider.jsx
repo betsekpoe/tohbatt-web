@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const IMAGES = [
   "/hero/IMG-20251201-WA0030.jpg",
@@ -53,16 +54,16 @@ export default function HeroSlider() {
           animate={{ y: 0, opacity: 1 }}
           className="text-toh-gold font-bold uppercase tracking-[0.3em] mb-4"
         >
-          21 Years of God's Faithfulness
+          Trust of Hope Building And Training Technology
         </motion.h2>
         <motion.h1 
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-5xl md:text-7xl font-black text-white italic leading-tight"
+          className="text-5xl md:text-7xl font-black text-white italic leading-tight uppercase"
         >
-          BUILDING TRUST. <br />
-          <span className="text-toh-gold uppercase not-italic">Engineering Hope.</span>
+          Quality Construction. <br />
+          <span className="text-toh-gold uppercase not-italic">Skilled Training.</span>
         </motion.h1>
         
         <motion.div 
@@ -71,11 +72,11 @@ export default function HeroSlider() {
            transition={{ delay: 0.5 }}
            className="mt-10 flex gap-4"
         >
-          <button className="bg-toh-gold text-toh-navy px-8 py-4 font-black uppercase tracking-tighter hover:bg-white transition-colors">
-            Our Projects
+          <button className="bg-toh-gold text-toh-navy px-8 py-4 font-black uppercase tracking-tighter hover:bg-white cursor-pointer transition-colors">
+            <Link href="/projects">OUR PROJECTS</Link>
           </button>
-          <button className="border-2 border-white text-white px-8 py-4 font-black uppercase tracking-tighter hover:bg-white hover:text-toh-navy transition-all">
-            Get a Quote
+          <button className="border-2 border-white text-white px-8 py-4 font-black uppercase tracking-tighter hover:bg-white hover:text-toh-navy cursor-pointer transition-all">
+            <Link href="/about">LEARN MORE</Link>
           </button>
         </motion.div>
       </div>

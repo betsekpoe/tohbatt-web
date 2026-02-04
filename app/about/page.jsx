@@ -20,7 +20,7 @@ export default function AboutPage() {
               A Legacy of <span className="text-toh-gold">God's Faithfulness.</span>
             </h1>
             <p className="mt-6 text-gray-600 text-lg leading-relaxed">
-              Founded on **August 5, 2004**, by Mr. Isaac Goddey Nene, TOHBATT began with a vision to transform the construction sector. Starting with just 3 staff members and a first contract of only **GH¢30.00**, we have grown into a registered Private Limited Company (since 2013).
+              Founded on <span className="font-bold">August 5, 2004</span>, by Mr. Isaac Goddey Nene, TOHBATT began with a vision to transform the construction sector. Starting with just 3 staff members and a first contract of only <span className="font-bold">GH¢30.00</span>, we have grown into a registered Private Limited Company (since 2013).
             </p>
           </div>
           <div className="bg-toh-navy p-10 rounded-3xl text-white shadow-2xl relative overflow-hidden">
