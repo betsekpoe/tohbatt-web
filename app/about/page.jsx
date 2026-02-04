@@ -74,8 +74,8 @@ export default function AboutPage() {
 >
   <div className="flex flex-col md:flex-row gap-12 items-center">
     <div className="md:w-1/3">
-      <div className="aspect-[3/4] bg-toh-navy rounded-2xl flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-toh-navy to-transparent opacity-60"></div>
+      <div className="aspect-3/4 bg-toh-navy rounded-2xl flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-linear-to-t from-toh-navy to-transparent opacity-60"></div>
         <span className="text-toh-gold font-bold italic z-10">Isaac Goddey Nene</span>
       </div>
     </div>
