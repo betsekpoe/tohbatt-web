@@ -1,11 +1,12 @@
 "use client"; // Required for Framer Motion
-import { motion, useInView, animate } from "framer-motion";
+import { useInView, animate } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { getPosts } from "@/services/sanityService";
 import { urlFor } from "@/lib/sanity";
 import ContactForm from "@/components/ContactForm";
 import HeroSlider from "@/components/HeroSlider";
+import FadeIn from "@/components/FadeIn";
 
 var targetCounterValue = 120;
 
@@ -73,21 +74,21 @@ export default function Home() {
       <HeroSlider />
 
       {/* Workers Trained Counter */}
-      <div className="text-center m-16 mb-0 py-3 border border-toh-gold">
+      <FadeIn className="text-center m-16 mb-0 py-3 border border-toh-gold">
         <h2 className="text-toh-navy text-3xl font-extrabold uppercase tracking-tight">
           <Counter value={targetCounterValue} />+ Workers Trained
         </h2>
-      </div>
+      </FadeIn>
 
       {/* Services Section */}
       <section className="py-24 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <FadeIn className="text-center mb-16">
             <h2 className="text-toh-navy text-4xl font-black uppercase tracking-tight">
               What We Do
             </h2>
             <div className="w-20 h-1 bg-toh-gold mx-auto mt-4"></div>
-          </div>
+          </FadeIn>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
@@ -106,13 +107,10 @@ export default function Home() {
                 cta: "Get Started",
               },
             ].map((service, index) => (
-              <motion.div
+              <FadeIn
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-[1.5rem] p-10 text-left transition-all duration-300 ease-in-out border border-gray-200 border-t-[5px] border-t-toh-gold shadow-md relative overflow-hidden flex flex-col hover:-translate-y-2 hover:shadow-2xl"
+                delay={index * 0.2}
+                className="bg-white rounded-[1.5rem] p-10 text-left transition-all duration-300 ease-in-out border border-gray-200 border-t-[5px] border-t-toh-gold shadow-md relative overflow-hidden flex flex-col hover:-translate-y-2 hover:shadow-2xl h-full"
               >
                 <div className="flex mb-4">
                   <img
@@ -133,7 +131,7 @@ export default function Home() {
                 >
                   {service.cta}
                 </Link>
-              </motion.div>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -142,7 +140,7 @@ export default function Home() {
       {/* Legacy Stories Section */}
       <section className="py-24 px-8 bg-toh-light">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <FadeIn className="text-center mb-16">
             <h2 className="text-toh-navy text-4xl font-black uppercase tracking-tight">
               Legacy Stories
             </h2>
@@ -150,11 +148,12 @@ export default function Home() {
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               Documenting our impact one project at a time.
             </p>
-          </div>
+          </FadeIn>
 
           {/* Featured Post Card */}
           <div className="mb-12">
             {posts.length > 0 ? (
+              <FadeIn>
               <Link href={`/stories/${posts[0].slug}`} className="block group">
                 <div className="bg-white rounded-4xl overflow-hidden border border-toh-navy grid md:grid-cols-2 gap-0 relative transition-all duration-300 group-hover:-translate-y-1">
                   {/* Image Side */}
@@ -213,22 +212,25 @@ export default function Home() {
                   </div>
                 </div>
               </Link>
+              </FadeIn>
             ) : (
-              <div className="text-center py-20 bg-white rounded-3xl border border-gray-200 border-dashed">
+              <FadeIn className="text-center py-20 bg-white rounded-3xl border border-gray-200 border-dashed">
                 <p className="text-gray-400 italic text-xl">
                   No stories published yet. Head to Sanity Studio to add one!
                 </p>
-              </div>
+              </FadeIn>
             )}
           </div>
 
           <div className="text-center">
+            <FadeIn delay={0.2}>
             <Link
               href="/stories"
               className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-toh-navy text-toh-navy font-black uppercase tracking-wider rounded-full hover:bg-toh-navy hover:text-white transition-all duration-300"
             >
               View Other Posts
             </Link>
+            </FadeIn>
           </div>
         </div>
       </section>

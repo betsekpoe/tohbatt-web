@@ -1,6 +1,7 @@
 "use client"
 import { registerStudent } from "@/app/actions";
 import { useState } from "react";
+import FadeIn from "@/components/FadeIn"; // Import FadeIn
 
 export default function TrainingPage() {
   const [status, setStatus] = useState(null);
@@ -13,7 +14,7 @@ export default function TrainingPage() {
 
   return (
     <main className="min-h-screen bg-gray-50 py-20 px-8">
-      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 bg-white shadow-2xl rounded-2xl overflow-hidden">
+      <FadeIn className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 bg-white shadow-2xl rounded-2xl overflow-hidden">
         
         {/* Info Side */}
         <div className="bg-toh-navy p-12 text-white">
@@ -27,6 +28,7 @@ export default function TrainingPage() {
             <li className="flex items-center gap-3">✅ Sustainable Agribusiness</li>
           </ul>
         </div>
+
 
         {/* Form Side */}
         <div className="p-12">

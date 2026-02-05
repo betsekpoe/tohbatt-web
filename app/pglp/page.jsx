@@ -1,17 +1,12 @@
 "use client"
 import { motion } from "framer-motion";
+import FadeIn from "@/components/FadeIn"; // Import FadeIn
 
 export default function PGLPPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <motion.section 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="relative h-[60vh] flex items-center justify-center bg-toh-green overflow-hidden"
-      >
+      <FadeIn className="relative h-[60vh] flex items-center justify-center bg-toh-green overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           {/* Subtle grid pattern or architectural lines */}
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', size: '40px 40px' }}></div>
@@ -22,16 +17,10 @@ export default function PGLPPage() {
             PACIFIC GREENLAND <br /> POND (PGLP)
           </h1>
         </div>
-      </motion.section>
+      </FadeIn>
 
       {/* The Weija Lake Initiative */}
-      <motion.section 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="py-20 px-8 max-w-6xl mx-auto"
-      >
+      <FadeIn className="py-20 px-8 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>
             <h3 className="text-3xl font-black text-toh-navy mb-6 uppercase">Sustainability at Scale</h3>

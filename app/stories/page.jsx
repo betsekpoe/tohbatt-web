@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { getAllPosts } from "@/services/sanityService";
 import { urlFor } from "@/lib/sanity";
-import { motion } from "framer-motion";
+import FadeIn from "@/components/FadeIn"; // Import FadeIn
 
 export default function StoriesPage() {
   const [posts, setPosts] = useState([]);
@@ -17,11 +17,7 @@ export default function StoriesPage() {
       {/* Header Section */}
       <section className="bg-toh-navy text-white py-20 px-8">
         <div className="max-w-6xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <FadeIn>
             <span className="text-toh-gold font-bold tracking-widest uppercase text-sm">
               Our Journey
             </span>
@@ -32,7 +28,7 @@ export default function StoriesPage() {
               Explore our projects, training programs, and the impact we are making
               across West Africa. Every structure built and every worker trained tells a story.
             </p>
-          </motion.div>
+          </FadeIn>
         </div>
       </section>
 
@@ -42,12 +38,9 @@ export default function StoriesPage() {
           {posts.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post, index) => (
-                <motion.div
+                <FadeIn
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                  delay={index * 0.1}
                 >
                   <Link href={`/stories/${post.slug}`} className="block h-full">
                     <div className="bg-white rounded-[1.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex flex-col h-full">
@@ -91,7 +84,7 @@ export default function StoriesPage() {
                       </div>
                     </div>
                   </Link>
-                </motion.div>
+                </FadeIn>
               ))}
             </div>
           ) : (
