@@ -4,18 +4,20 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { getPosts } from "@/services/sanityService";
 import { urlFor } from "@/lib/sanity";
-import ComtactForm from "@/components/ContactForm";
+import ContactForm from "@/components/ContactForm";
 import HeroSlider from "@/components/HeroSlider";
+
+var targetCounterValue = 120;
 
 function Counter({ value }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  
+
   useEffect(() => {
     if (isInView) {
       const node = ref.current;
-      const controls = animate(0, value, {
-        duration: 2,
+      const controls = animate(50, value, {
+        duration: 0.8,
         ease: "easeOut",
         onUpdate(latest) {
           if (node) node.textContent = Math.round(latest);
@@ -70,18 +72,20 @@ export default function Home() {
       </section> */}
       <HeroSlider />
 
+      {/* Workers Trained Counter */}
+      <div className="text-center m-16 mb-0 py-10 rounded-full border border-toh-gold">
+        <h2 className="text-toh-navy text-3xl font-extrabold uppercase tracking-tight">
+          <Counter value={targetCounterValue} />+ Workers Trained
+        </h2>
+      </div>
 
       {/* Services Section */}
       <section className="py-24 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 py-10 rounded-full border border-toh-gold">
-            <h2 className="text-toh-navy text-3xl font-extrabold uppercase tracking-tight">
-              <Counter value={120} />+ Workers Trained
-            </h2>
-          </div>
-
           <div className="text-center mb-16">
-            <h2 className="text-toh-navy text-4xl font-black uppercase tracking-tight">What We Do</h2>
+            <h2 className="text-toh-navy text-4xl font-black uppercase tracking-tight">
+              What We Do
+            </h2>
             <div className="w-20 h-1 bg-toh-gold mx-auto mt-4"></div>
           </div>
 
@@ -89,13 +93,17 @@ export default function Home() {
             {[
               {
                 title: "Construction",
-                desc: "Specializing in Bio-gas systems, masonry, and sustainable infrastructure.",
-                icon: "🏗️"
+                desc: "Using modern technologies to provide excellent construction services with a focus on quality and sustainability.",
+                image: "/animated-icons/under-construction.gif",
+                link: "/projects",
+                cta: "Let's Build",
               },
               {
-                title: "Technical Training",
-                desc: "Empowering 120+ workers across West Africa with certified technical skills.",
-                icon: "🎓"
+                title: "Training",
+                desc: "Providing comprehensive training to empower individuals with the skills needed in the construction industry.",
+                image: "/animated-icons/training.gif",
+                link: "/training",
+                cta: "Get Started",
               },
             ].map((service, index) => (
               <motion.div
@@ -104,11 +112,27 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="p-8 border border-gray-100 rounded-xl hover:shadow-2xl transition-all border-t-4 border-t-toh-gold shadow-sm"
+                className="bg-white rounded-[1.5rem] p-10 text-left transition-all duration-300 ease-in-out border border-gray-200 border-t-[5px] border-t-toh-gold shadow-md relative overflow-hidden flex flex-col hover:-translate-y-2 hover:shadow-2xl"
               >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold text-toh-navy mb-3">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.desc}</p>
+                <div className="flex mb-4">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-30 h-30 object-contain"
+                  />
+                </div>
+                <h3 className="text-toh-navy text-2xl font-extrabold mb-4 leading-tight">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-lg leading-relaxed mb-0 grow">
+                  {service.desc}
+                </p>
+                <Link
+                  href={service.link}
+                  className="inline-block mt-6 text-toh-navy font-bold uppercase text-sm tracking-wider no-underline border-b-2 border-toh-gold pb-0.5 transition-colors hover:text-toh-gold self-start"
+                >
+                  {service.cta}
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -118,47 +142,100 @@ export default function Home() {
       {/* Legacy Stories Section */}
       <section className="py-24 px-8 bg-toh-light">
         <div className="max-w-6xl mx-auto">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <h2 className="text-toh-navy text-4xl font-black uppercase">Legacy Stories</h2>
-              <p className="text-gray-600 mt-2">Documenting our impact across West Africa</p>
-            </div>
-            <button className="text-toh-navy font-bold border-b-2 border-toh-gold pb-1 hover:text-toh-gold transition-all">
-              View All Stories
-            </button>
+          <div className="text-center mb-16">
+            <h2 className="text-toh-navy text-4xl font-black uppercase tracking-tight">
+              Legacy Stories
+            </h2>
+            <div className="w-20 h-1 bg-toh-gold mx-auto mt-4 mb-6"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Documenting our impact one project at a time.
+            </p>
           </div>
 
-          {/* Posts Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {posts.length > 0 ? posts.map((post, index) => (
-              <Link href={`/stories/${post.slug}`} key={index}>
-                {/* Single Post Card */}
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg group cursor-pointer h-full">
-                  <div className="h-48 overflow-hidden bg-gray-200">
-                    {post.mainImage && (
+          {/* Featured Post Card */}
+          <div className="mb-12">
+            {posts.length > 0 ? (
+              <Link href={`/stories/${posts[0].slug}`} className="block group">
+                <div className="bg-white rounded-4xl overflow-hidden border border-toh-navy grid md:grid-cols-2 gap-0 relative transition-all duration-300 group-hover:-translate-y-1">
+                  {/* Image Side */}
+                  <div className="h-64 md:h-auto min-h-100 relative overflow-hidden bg-gray-200">
+                    {posts[0].mainImage && (
                       <img
-                        src={urlFor(post.mainImage).url()}
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        src={urlFor(posts[0].mainImage).url()}
+                        alt={posts[0].title}
+                        className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700 ease-out"
                       />
                     )}
+                    <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent"></div>
                   </div>
-                  <div className="p-6">
-                    <span className="text-xs font-bold text-toh-gold uppercase tracking-widest">{post.category}</span>
-                    <h3 className="text-xl font-bold text-toh-navy mt-2 mb-3 leading-tight">{post.title}</h3>
-                    <p className="text-gray-600 text-sm line-clamp-3 mb-4">{post.body}</p>
-                    <div className="text-toh-navy font-bold text-xs uppercase">Read All →</div>
+
+                  {/* Content Side */}
+                  <div className="p-8 md:p-14 flex flex-col justify-center bg-white">
+                    <div className="flex items-center gap-4 mb-6 text-sm font-bold uppercase tracking-widest">
+                      <span className="text-toh-gold">{posts[0].category}</span>
+                      <span className="text-gray-300">•</span>
+                      <span className="text-gray-500">
+                        {new Date(posts[0].publishedAt).toLocaleDateString(
+                          "en-US",
+                          {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          },
+                        )}
+                      </span>
+                    </div>
+
+                    <h3 className="text-3xl md:text-4xl font-black text-toh-navy mb-6 leading-tight group-hover:text-toh-gold transition-colors">
+                      {posts[0].title}
+                    </h3>
+
+                    <p className="text-gray-600 text-lg leading-relaxed line-clamp-3 mb-8">
+                      {posts[0].body}
+                    </p>
+
+                    <div className="flex items-center gap-2 text-toh-navy font-bold uppercase tracking-wider text-sm border-b-2 border-toh-gold pb-1 self-start group-hover:text-toh-gold transition-colors">
+                      Read Full Story
+                      <svg
+                        className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="3"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </Link>
-            )) : (
-              <p className="text-gray-400 italic">No stories published yet. Head to Sanity Studio to add one!</p>
+            ) : (
+              <div className="text-center py-20 bg-white rounded-3xl border border-gray-200 border-dashed">
+                <p className="text-gray-400 italic text-xl">
+                  No stories published yet. Head to Sanity Studio to add one!
+                </p>
+              </div>
             )}
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/stories"
+              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-toh-navy text-toh-navy font-black uppercase tracking-wider rounded-full hover:bg-toh-navy hover:text-white transition-all duration-300"
+            >
+              View Other Posts
+            </Link>
           </div>
         </div>
       </section>
 
-      <ComtactForm />
+      <div id="contact-form">
+        <ContactForm/>
+      </div>
     </main>
   );
 }

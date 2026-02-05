@@ -13,3 +13,16 @@ export async function getPosts() {
   const data = await client.fetch(query);
   return data;
 }
+
+export async function getAllPosts() {
+  const query = `*[_type == "post"] | order(publishedAt desc) {
+    title,
+    "slug": slug.current,
+    mainImage,
+    category,
+    publishedAt,
+    "body": body[0].children[0].text
+  }`;
+  const data = await client.fetch(query);
+  return data;
+}

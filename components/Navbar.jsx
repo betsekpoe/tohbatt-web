@@ -18,8 +18,8 @@ export default function Navbar() {
       </div>
 
       <button className="bg-toh-navy text-white px-6 py-2 rounded-md font-bold hover:bg-opacity-90 transition-all">
-        Contact Us
-      </button>
+        <Link href="#contact-form">Contact Us</Link>
+      </button> 
     </nav>
   );
 }
