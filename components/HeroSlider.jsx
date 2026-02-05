@@ -4,17 +4,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 const IMAGES = [
-  "/hero/IMG-20251201-WA0030.jpg",
-  "/hero/IMG-20251201-WA0031.jpg",
-  "/hero/IMG-20251201-WA0032.jpg",
-  "/hero/IMG-20251201-WA0033.jpg",
-  "/hero/IMG-20251206-WA0009.jpg",
-  "/hero/IMG-20251206-WA0012.jpg",
-  "/hero/IMG-20251206-WA0013.jpg",
-  "/hero/IMG-20251206-WA0018.jpg",
-  "/hero/IMG-20251206-WA0019.jpg",
-  "/hero/IMG-20251206-WA0020.jpg",
-  "/hero/Layer 0.jpg",
+  "/hero/1.jpg",
+  "/hero/2.jpg",
+  "/hero/3.jpg",
+  "/hero/4.jpg",
+  "/hero/5.jpg",
+  "/hero/6.jpg",
+  "/hero/7.jpg",
+  "/hero/8.jpg",
+  "/hero/9.jpg",
+  "/hero/10.jpg",
+  "/hero/11.jpg",
+  "/hero/12.jpg",
+  "/hero/13.jpg",
+  "/hero/14.jpg",
+  "/hero/15.jpg",
+  "/hero/16.jpg",
 ];
 
 export default function HeroSlider() {
@@ -39,9 +44,9 @@ export default function HeroSlider() {
           transition={{ duration: 1.5 }}
           className="absolute inset-0 z-0"
         >
-          <img 
-            src={IMAGES[index]} 
-            className="w-full h-full object-cover" 
+          <img
+            src={IMAGES[index]}
+            className="w-full h-full object-cover"
             alt="TOHBATT Industrial Work"
           />
         </motion.div>
@@ -49,28 +54,30 @@ export default function HeroSlider() {
 
       {/* Overlay Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-8">
-        <motion.h2 
+        <motion.h2
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className="text-toh-gold font-bold uppercase tracking-[0.3em] mb-4"
         >
           Trust of Hope Building And Training Technology
         </motion.h2>
-        <motion.h1 
+        <motion.h1
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
           className="text-5xl md:text-7xl font-black text-white italic leading-tight uppercase"
         >
           Quality Construction. <br />
-          <span className="text-toh-gold uppercase not-italic">Skilled Training.</span>
+          <span className="text-toh-gold uppercase not-italic">
+            Skilled Training.
+          </span>
         </motion.h1>
-        
-        <motion.div 
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 1 }}
-           transition={{ delay: 0.5 }}
-           className="mt-10 flex gap-4"
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="mt-10 flex gap-4"
         >
           <button className="bg-toh-gold text-toh-navy px-8 py-4 font-black uppercase tracking-tighter hover:bg-white cursor-pointer transition-colors">
             <Link href="/projects">OUR PROJECTS</Link>
@@ -84,8 +91,8 @@ export default function HeroSlider() {
       {/* Slide Indicators */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {IMAGES.map((_, i) => (
-          <div 
-            key={i} 
+          <div
+            key={i}
             className={`h-1 transition-all duration-500 ${index === i ? "w-12 bg-toh-gold" : "w-4 bg-white/30"}`}
           />
         ))}
