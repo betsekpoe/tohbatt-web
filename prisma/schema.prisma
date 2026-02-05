@@ -4,8 +4,8 @@ generator client {
 }
 
 datasource db {
-  // provider = "postgresql" 
-  provider = "sqlite"
+  provider = "postgresql"
+  // provider = "sqlite"
 }
 
 model Inquiry {
