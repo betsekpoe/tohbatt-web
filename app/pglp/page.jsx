@@ -55,7 +55,7 @@ export default function PGLPPage() {
             </div>
           </div>
         </div>
-      </motion.section>
+      </FadeIn>
 
       {/* Call to Action */}
       <motion.section 
