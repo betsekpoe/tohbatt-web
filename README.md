@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TOHBATT Web
+
+**Trust of Hope Building and Training Technology (TOHBATT)**
+Providing world-class technical training and industrial construction services since 2013. Building legacies across Ghana and beyond.
+
+This repository contains the source code for the TOHBATT official website, built with Next.js, Tailwind CSS, Sanity CMS, and Prisma (Postgresql).
+
+## Features
+
+-   **Modern UI/UX**: Built with Next.js App Router and Tailwind CSS.
+-   **CMS Integration**: Content management for Stories/Posts using Sanity.io.
+-   **Database**: PostgreSQL integration via Prisma ORM for handling inquiries and trainee data.
+-   **Animations**: Smooth page transitions and element animations using Framer Motion.
+-   **Responsive Design**: Fully optimized for mobile, tablet, and desktop views.
+
+## Project Structure
+
+```bash
+tohbatt-web/
+├── app/                  # Next.js App Router pages and layouts
+│   ├── projects/         # Projects showcase pages
+│   ├── stories/          # Blog/News pages (fetched from Sanity)
+│   ├── training/         # Training services pages
+│   └── pglp/             # (Hidden for now.) Pacific Greenland Pond (Agribusiness) section
+├── components/           # Reusable React components (Navbar, Hero, etc.)
+├── lib/                  # Library/Utility functions (DB, Sanity client)
+├── prisma/               # Database schema and configuration
+├── sanity/               # Sanity Studio configuration and schemas
+└── public/               # Static assets
+```
+
+## Tech Stack
+
+-   **Framework**: [Next.js 16](https://nextjs.org/)
+-   **Language**: JavaScript
+-   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+-   **CMS**: [Sanity](https://www.sanity.io/)
+-   **Database ORM**: [Prisma](https://www.prisma.io/)
+-   **Animations**: [Framer Motion](https://www.framer.com/motion/)
 
 ## Getting Started
 
-First, run the development server:
+### Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/betsekpoe/tohbatt-web.git
+    cd tohbatt-web
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3.  **Environment Setup:**
+    Create a `.env` file in the root directory. You will need the connection string for your database.
+    ```env
+    DATABASE_URL="postgresql://user:password@localhost:5432/tohbatt_db?schema=public"
+    ```
+    *(Note: Sanity configuration is currently located in `lib/sanity.js`. Ensure you have access to the Sanity project `tam2yhf9` or update it to your own).*
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4.  **Run Database Migrations:**
+    Initialize the database schema using Prisma.
+    ```bash
+    npx prisma generate
+    npx prisma db push
+    ```
 
-## Learn More
+5.  **Run the Development Server:**
+    ```bash
+    npm run dev
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Content Management (Sanity)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project uses Sanity for managing blog posts and stories. The schema definitions are located in `sanity/schemaTypes`.
 
-## Deploy on Vercel
+To manage content, you can either:
+-   Access the deployed Sanity Studio (if available).
+-   Run the sanity studio locally (check the `sanity/` folder for specific scripts if a separate package.json exists there, otherwise managed via the main app if configured).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](LICENSE)
