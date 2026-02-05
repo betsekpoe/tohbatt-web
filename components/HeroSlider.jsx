@@ -19,7 +19,6 @@ const IMAGES = [
   "/hero/13.jpg",
   "/hero/14.jpg",
   "/hero/15.jpg",
-  "/hero/16.jpg",
 ];
 
 export default function HeroSlider() {
@@ -57,7 +56,7 @@ export default function HeroSlider() {
         <motion.h2
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="text-toh-gold font-bold uppercase tracking-[0.3em] mb-4"
+          className="text-toh-gold font-bold uppercase mb-4"
         >
           Trust of Hope Building And Training Technology
         </motion.h2>
@@ -65,7 +64,7 @@ export default function HeroSlider() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-5xl md:text-7xl font-black text-white italic leading-tight uppercase"
+          className="text-4xl md:text-7xl font-black text-white italic leading-tight uppercase"
         >
           Quality Construction. <br />
           <span className="text-toh-gold uppercase not-italic">

@@ -73,7 +73,7 @@ export default function Home() {
       <HeroSlider />
 
       {/* Workers Trained Counter */}
-      <div className="text-center m-16 mb-0 py-10 rounded-full border border-toh-gold">
+      <div className="text-center m-16 mb-0 py-3 border border-toh-gold">
         <h2 className="text-toh-navy text-3xl font-extrabold uppercase tracking-tight">
           <Counter value={targetCounterValue} />+ Workers Trained
         </h2>
