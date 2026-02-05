@@ -21,7 +21,7 @@ export default function StoryClient({ story }) {
     return (
         <main className="min-h-screen bg-white">
             {/* Hero Header */}
-            <header className="pt-20 pb-12 px-4 sm:px-8 bg-gradient-to-b from-gray-50 to-white border-b border-gray-200">
+            <header className="pt-20 pb-12 px-4 sm:px-8 bg-linear-to-b from-gray-50 to-white border-b border-gray-200">
                 <FadeIn className="max-w-3xl mx-auto">
                     <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-toh-navy italic leading-tight mb-4">
                         {story.title}

@@ -64,7 +64,7 @@ export default function StoriesPage() {
                       </div>
 
                       {/* Content */}
-                      <div className="p-8 flex flex-col flex-grow">
+                      <div className="p-8 flex flex-col grow">
                         <div className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-2">
                           {post.publishedAt && new Date(post.publishedAt).toLocaleDateString('en-US', {
                             year: 'numeric',
@@ -75,7 +75,7 @@ export default function StoriesPage() {
                         <h3 className="text-xl font-extrabold text-toh-navy mb-3 leading-tight line-clamp-2">
                           {post.title}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-6 flex-grow">
+                        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-6 grow">
                           {post.body}
                         </p>
                         <span className="text-toh-navy font-bold text-xs uppercase tracking-wider border-b-2 border-toh-gold pb-1 self-start group-hover:text-toh-gold transition-colors">

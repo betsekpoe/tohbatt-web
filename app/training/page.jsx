@@ -65,7 +65,7 @@ export default function TrainingPage() {
             </form>
           )}
         </div>
-      </div>
+      </FadeIn>
 
       {/* Additional Content */}
       <div className="max-w-4xl mx-auto mt-24">
@@ -95,28 +95,28 @@ export default function TrainingPage() {
              <h2 className="text-3xl font-black text-toh-navy text-center mb-12">Your Journey to Mastery</h2>
              <div className="space-y-8 relative before:absolute before:inset-0 before:left-5 before:w-0.5 before:bg-gray-200">
                 <div className="relative flex gap-8 items-start">
-                    <div className="w-10 h-10 rounded-full bg-toh-navy text-white flex-shrink-0 flex items-center justify-center font-bold z-10 ring-4 ring-gray-50">1</div>
+                    <div className="w-10 h-10 rounded-full bg-toh-navy text-white shrink-0 flex items-center justify-center font-bold z-10 ring-4 ring-gray-50">1</div>
                     <div className="bg-white p-6 rounded-xl border border-gray-100 flex-1 shadow-sm">
                         <h3 className="text-xl font-bold text-toh-navy">Theory & Safety Foundation</h3>
                         <p className="text-gray-600 mt-2">Introduction to construction principles, site safety protocols, and material science to build a solid base.</p>
                     </div>
                 </div>
                 <div className="relative flex gap-8 items-start">
-                    <div className="w-10 h-10 rounded-full bg-toh-navy text-white flex-shrink-0 flex items-center justify-center font-bold z-10 ring-4 ring-gray-50">2</div>
+                    <div className="w-10 h-10 rounded-full bg-toh-navy text-white shrink-0 flex items-center justify-center font-bold z-10 ring-4 ring-gray-50">2</div>
                     <div className="bg-white p-6 rounded-xl border border-gray-100 flex-1 shadow-sm">
                         <h3 className="text-xl font-bold text-toh-navy">Specialized Workshops</h3>
                         <p className="text-gray-600 mt-2">Intensive modules on your chosen specialization (Bio-gas, Masonry, etc.) led by master craftsmen.</p>
                     </div>
                 </div>
                 <div className="relative flex gap-8 items-start">
-                    <div className="w-10 h-10 rounded-full bg-toh-navy text-white flex-shrink-0 flex items-center justify-center font-bold z-10 ring-4 ring-gray-50">3</div>
+                    <div className="w-10 h-10 rounded-full bg-toh-navy text-white shrink-0 flex items-center justify-center font-bold z-10 ring-4 ring-gray-50">3</div>
                     <div className="bg-white p-6 rounded-xl border border-gray-100 flex-1 shadow-sm">
                         <h3 className="text-xl font-bold text-toh-navy">Site Practicals</h3>
                         <p className="text-gray-600 mt-2">Three months of supervised work on actual TOHBATT client projects to apply your skills in the real world.</p>
                     </div>
                 </div>
                  <div className="relative flex gap-8 items-start">
-                    <div className="w-10 h-10 rounded-full bg-toh-gold text-toh-navy flex-shrink-0 flex items-center justify-center font-bold z-10 ring-4 ring-gray-50">4</div>
+                    <div className="w-10 h-10 rounded-full bg-toh-gold text-toh-navy shrink-0 flex items-center justify-center font-bold z-10 ring-4 ring-gray-50">4</div>
                     <div className="bg-white p-6 rounded-xl border border-gray-100 flex-1 shadow-sm border-l-4 border-l-toh-gold">
                         <h3 className="text-xl font-bold text-toh-navy">Graduation & Placement</h3>
                         <p className="text-gray-600 mt-2">Final assessment, award of certificates, and potential job placement assistance for top performers.</p>
