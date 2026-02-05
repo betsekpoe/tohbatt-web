@@ -86,4 +86,4 @@ To manage content, you can either:
 
 ## License
 
-[MIT](LICENSE)
+<!-- [MIT](LICENSE) -->
