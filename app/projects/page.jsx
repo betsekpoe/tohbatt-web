@@ -1,4 +1,5 @@
 import { client } from "@/lib/sanity";
+import Link from "next/link";
 
 async function getProjects() {
   // Fetching the real data from your Sanity Studio
@@ -28,7 +29,7 @@ export default async function ProjectsPage() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
-            <div key={i} className="group bg-toh-light rounded-xl overflow-hidden border border-gray-100 transition-all hover:shadow-2xl">
+            <Link href={`/stories/${project.slug}`} key={i} className="group bg-toh-light rounded-xl overflow-hidden border border-gray-100 transition-all hover:shadow-2xl block">
               <div className="aspect-video relative overflow-hidden bg-gray-200">
                 {project.imageUrl && (
                   <img 
@@ -50,11 +51,11 @@ export default async function ProjectsPage() {
                 <div className="flex items-center justify-between">
                    <span className="h-[2px] w-12 bg-toh-gold"></span>
                    <button className="text-toh-navy font-black text-xs uppercase tracking-widest hover:text-toh-green transition-colors">
-                     View Project →
+                     Read More →
                    </button>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
