@@ -26,3 +26,14 @@ export async function getAllPosts() {
   const data = await client.fetch(query);
   return data;
 }
+
+export async function getSiteAssets() {
+  const query = `*[_type == "siteAssets"][0] {
+    "prospectusUrl": prospectus.asset->url,
+    "galleryImages": galleryImages[]{
+      "url": asset->url
+    }
+  }`;
+  const data = await client.fetch(query);
+  return data;
+}

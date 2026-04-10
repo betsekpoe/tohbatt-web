@@ -1,10 +1,18 @@
 "use client"
 import { registerStudent } from "@/app/actions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FadeIn from "@/components/FadeIn"; // Import FadeIn
+import { getSiteAssets } from "@/services/sanityService";
 
 export default function TrainingPage() {
   const [status, setStatus] = useState(null);
+  const [prospectusUrl, setProspectusUrl] = useState(null);
+
+  useEffect(() => {
+    getSiteAssets().then((data) => {
+      setProspectusUrl(data?.prospectusUrl || null);
+    });
+  }, []);
 
   async function handleRegister(formData) {
     const result = await registerStudent(formData);
@@ -87,6 +95,25 @@ export default function TrainingPage() {
             <li>Electrical Engineering and CCT installation</li>
             <li>Plumbing and Bio-Digester</li>
           </ul>
+        </div>
+
+        <div className="bg-toh-light border border-toh-gold rounded-2xl p-8 mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+          <div>
+            <h2 className="text-2xl font-black text-toh-navy mb-2">Prospectus</h2>
+            <p className="text-gray-700 leading-relaxed">Download the latest training prospectus for complete program details.</p>
+          </div>
+          {prospectusUrl ? (
+            <a
+              href={prospectusUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 bg-toh-navy text-white font-black uppercase tracking-wider rounded-full hover:bg-toh-gold hover:text-toh-navy transition-all duration-300"
+            >
+              View Prospectus
+            </a>
+          ) : (
+            <span className="text-sm font-semibold text-gray-500">Prospectus file not uploaded yet.</span>
+          )}
         </div>
 
         <div className="bg-toh-light border border-toh-gold rounded-2xl p-8 mb-16">

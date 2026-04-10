@@ -29,6 +29,7 @@ export default function Navbar() {
       <div className="hidden md:flex gap-8 font-medium text-toh-navy">
         <Link href="/" className="hover:text-toh-gold transition-colors">Home</Link>
         <Link href="/projects" className="hover:text-toh-gold transition-colors">Projects</Link>
+        <Link href="/gallery" className="hover:text-toh-gold transition-colors">Gallery</Link>
         <Link href="/training" className="hover:text-toh-gold transition-colors">Training</Link>
         <Link href="/about" className="hover:text-toh-gold transition-colors">About</Link>
       </div>
@@ -77,6 +78,7 @@ export default function Navbar() {
             <div className="flex flex-col gap-6 px-8 py-4 font-medium text-toh-navy text-lg">
                 <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-toh-gold transition-colors">Home</Link>
                 <Link href="/projects" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-toh-gold transition-colors">Projects</Link>
+              <Link href="/gallery" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-toh-gold transition-colors">Gallery</Link>
                 <Link href="/training" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-toh-gold transition-colors">Training</Link>
                 <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-toh-gold transition-colors">About</Link>
                 <Link href="#contact-form" onClick={() => setIsMobileMenuOpen(false)} className="bg-toh-navy text-white px-6 py-2 rounded-md font-bold text-center mt-4">Contact Us</Link>
