@@ -8,10 +8,10 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center px-8 py-6 bg-white border-b border-gray-100 sticky top-0 z-50">
+    <nav className="flex justify-between items-center px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 bg-white border-b border-gray-100 sticky top-0 z-50">
       <Link href="/">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg overflow-hidden border border-gray-200 shrink-0 bg-white">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg overflow-hidden border border-gray-200 shrink-0 bg-white">
             <Image
               src="/icon.png"
               alt="TOHBATT logo"
@@ -21,7 +21,7 @@ export default function Navbar() {
               priority
             />
           </div>
-          <span className="text-2xl font-black tracking-tighter text-toh-navy">TOHBATT</span>
+          <span className="text-xl sm:text-2xl font-black tracking-tighter text-toh-navy">TOHBATT</span>
         </div>
       </Link>
       
@@ -61,7 +61,7 @@ export default function Navbar() {
       )}
 
       {/* Mobile Menu Sidebar */}
-      <div className={`fixed top-0 right-0 h-full w-64 bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed top-0 right-0 h-full w-full max-w-xs bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col h-full">
             <div className="flex justify-end p-6">
                 <button 

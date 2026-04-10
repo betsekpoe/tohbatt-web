@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import FadeIn from "@/components/FadeIn";
 import { getSiteAssets } from "@/services/sanityService";
 
 export default function GalleryPage() {
   const [images, setImages] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const [slideDirection, setSlideDirection] = useState(0);
   const [touchStartX, setTouchStartX] = useState(null);
   const [touchEndX, setTouchEndX] = useState(null);
 
@@ -26,12 +28,14 @@ export default function GalleryPage() {
       }
 
       if (event.key === "ArrowLeft") {
+        setSlideDirection(-1);
         setSelectedIndex((currentIndex) =>
           currentIndex === null ? currentIndex : (currentIndex - 1 + images.length) % images.length,
         );
       }
 
       if (event.key === "ArrowRight") {
+        setSlideDirection(1);
         setSelectedIndex((currentIndex) =>
           currentIndex === null ? currentIndex : (currentIndex + 1) % images.length,
         );
@@ -43,6 +47,7 @@ export default function GalleryPage() {
   }, [images.length, selectedIndex]);
 
   function openImage(index) {
+    setSlideDirection(0);
     setSelectedIndex(index);
     setTouchStartX(null);
     setTouchEndX(null);
@@ -55,12 +60,14 @@ export default function GalleryPage() {
   }
 
   function goToPrevious() {
+    setSlideDirection(-1);
     setSelectedIndex((currentIndex) =>
       currentIndex === null ? currentIndex : (currentIndex - 1 + images.length) % images.length,
     );
   }
 
   function goToNext() {
+    setSlideDirection(1);
     setSelectedIndex((currentIndex) =>
       currentIndex === null ? currentIndex : (currentIndex + 1) % images.length,
     );
@@ -88,22 +95,22 @@ export default function GalleryPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="bg-toh-navy text-white py-20 px-8">
+      <section className="bg-toh-navy text-white py-16 sm:py-20 px-4 sm:px-6 md:px-8">
         <div className="max-w-6xl mx-auto text-center">
           <FadeIn>
             <span className="text-toh-gold font-bold tracking-widest uppercase text-sm">Visual Projects</span>
-            <h1 className="text-5xl md:text-6xl font-black mt-4 mb-6">Image Gallery</h1>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mt-4 mb-6">Image Gallery</h1>
+            <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
               A curated collection of project visuals uploaded and managed directly by our team.
             </p>
           </FadeIn>
         </div>
       </section>
 
-      <section className="py-20 px-8 bg-toh-light">
+      <section className="py-14 sm:py-20 px-4 sm:px-6 md:px-8 bg-toh-light">
         <div className="max-w-6xl mx-auto">
           {images.length > 0 ? (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {images.map((image, index) => (
                 <FadeIn key={index} delay={index * 0.08}>
                   <button
@@ -178,11 +185,19 @@ export default function GalleryPage() {
                 </svg>
               </button>
 
-              <img
-                src={activeImage.url}
-                alt=""
-                className="w-full max-h-[80vh] object-contain bg-black"
-              />
+              <AnimatePresence initial={false} custom={slideDirection} mode="wait">
+                <motion.img
+                  key={selectedIndex}
+                  src={activeImage.url}
+                  alt=""
+                  custom={slideDirection}
+                  initial={{ x: slideDirection >= 0 ? 80 : -80, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: slideDirection >= 0 ? -80 : 80, opacity: 0 }}
+                  transition={{ duration: 0.28, ease: "easeInOut" }}
+                  className="w-full max-h-[80vh] object-contain bg-black"
+                />
+              </AnimatePresence>
             </div>
 
             <div className="mt-4 flex items-center justify-between text-white/80 text-sm">

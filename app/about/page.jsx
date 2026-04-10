@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <main className="bg-white">
       {/* Hero: The Vision */}
-      <FadeIn className="py-20 px-8 max-w-6xl mx-auto">
+      <FadeIn className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-toh-gold font-bold uppercase tracking-widest text-sm mb-2">Since 2004</h2>
@@ -32,13 +32,13 @@ export default function AboutPage() {
       </FadeIn>
 
       {/* Philosophy Section */}
-      <FadeIn className="bg-toh-light py-20 px-8">
+      <FadeIn className="bg-toh-light py-16 sm:py-20 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-black text-toh-navy mb-8">Instruction in Local Languages</h2>
           <p className="text-gray-700 text-xl leading-relaxed italic">
             &quot;To bridge the gap for those with limited formal education, we provide technical training in local languages, ensuring that the next generation of West African builders truly understands the &apos;Why&apos; and &apos;How&apos; of technology.&quot;
           </p>
-          <div className="mt-10 flex justify-center gap-8">
+          <div className="mt-10 flex justify-center gap-6 sm:gap-8">
              <div className="text-center">
                 <span className="block text-3xl font-bold text-toh-green">21+</span>
                 <span className="text-xs uppercase text-gray-500">Years Experience</span>
@@ -52,7 +52,7 @@ export default function AboutPage() {
       </FadeIn>
 
       {/* Founder's Story: The Resilience */}
-      <FadeIn className="py-20 px-8 max-w-6xl mx-auto border-t border-gray-100">
+      <FadeIn className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto border-t border-gray-100">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="md:w-1/3">
             <div className="aspect-3/4 bg-toh-navy rounded-2xl flex items-center justify-center relative overflow-hidden">
@@ -73,7 +73,7 @@ export default function AboutPage() {
         </div>
       </FadeIn>
 
-      <FadeIn className="bg-toh-light py-20 px-8 border-t border-gray-100">
+      <FadeIn className="bg-toh-light py-16 sm:py-20 px-4 sm:px-6 md:px-8 border-t border-gray-100">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
           <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
             <h2 className="text-2xl font-black text-toh-navy mb-5">Industrial Attachment Opportunity</h2>

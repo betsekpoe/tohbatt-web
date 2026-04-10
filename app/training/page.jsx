@@ -15,11 +15,11 @@ export default function TrainingPage() {
   const whatsappHref = "https://wa.me/233245733495?text=Hello%20TOHBATT,%20I%20would%20like%20to%20apply%20for%20training.%20Please%20share%20the%20next%20steps.";
 
   return (
-    <main className="min-h-screen bg-gray-50 py-20 px-8">
+    <main className="min-h-screen bg-gray-50 py-16 sm:py-20 px-4 sm:px-6 md:px-8">
       <FadeIn className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 bg-white shadow-2xl rounded-2xl overflow-hidden">
         
         {/* Info Side */}
-        <div className="bg-toh-navy p-12 text-white">
+        <div className="bg-toh-navy p-8 sm:p-10 md:p-12 text-white">
           <h1 className="text-3xl font-black mb-6">Empowering the Next Generation</h1>
           <p className="text-gray-300 mb-8 leading-relaxed">
             Join over 120 certified professionals trained by TOHBATT across West Africa. Our courses are 80% practical and 20% theory.
@@ -33,7 +33,7 @@ export default function TrainingPage() {
 
 
         {/* Apply Now Side */}
-        <div className="p-12 flex items-center">
+        <div className="p-8 sm:p-10 md:p-12 flex items-center">
           <div className="w-full bg-toh-light border border-toh-gold rounded-2xl p-8 md:p-10 text-center">
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-toh-gold/20 text-toh-navy text-2xl mb-5">
               ☎
@@ -60,14 +60,14 @@ export default function TrainingPage() {
 
       {/* Additional Content */}
       <div id="courses" className="max-w-4xl mx-auto mt-24 scroll-mt-24">
-        <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm mb-12">
+        <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-sm mb-12">
           <h2 className="text-2xl font-black text-toh-navy mb-4">Courses Offering</h2>
           <ul className="list-decimal list-inside text-gray-700 leading-relaxed space-y-2">
             <li>Masonry, Tilling and Steel bending -- All in one course</li>
           </ul>
         </div>
 
-        <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm mb-12">
+        <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-sm mb-12">
           <h2 className="text-2xl font-black text-toh-navy mb-4">Partnership Courses</h2>
           <ul className="list-decimal list-inside text-gray-700 leading-relaxed space-y-2">
             <li>General Carpentry</li>
@@ -79,7 +79,7 @@ export default function TrainingPage() {
           </ul>
         </div>
 
-        <div className="bg-toh-light border border-toh-gold rounded-2xl p-8 mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+        <div className="bg-toh-light border border-toh-gold rounded-2xl p-6 sm:p-8 mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
           <div>
             <h2 className="text-2xl font-black text-toh-navy mb-2">Prospectus</h2>
             <p className="text-gray-700 leading-relaxed">Download the latest training prospectus for complete program details.</p>
@@ -98,7 +98,7 @@ export default function TrainingPage() {
           )}
         </div>
 
-        <div className="bg-toh-light border border-toh-gold rounded-2xl p-8 mb-16">
+        <div className="bg-toh-light border border-toh-gold rounded-2xl p-6 sm:p-8 mb-16">
           <h2 className="text-2xl font-black text-toh-navy mb-4">Probation Period</h2>
           <p className="text-gray-700 leading-relaxed">
             Thirty (30) working days probationer test will be conducted, before signing an agreement form.

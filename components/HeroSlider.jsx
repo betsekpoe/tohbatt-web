@@ -78,15 +78,17 @@ export default function HeroSlider() {
           transition={{ delay: 0.5 }}
           className="mt-10 flex gap-4"
         >
-          <button className="bg-toh-gold text-toh-navy px-8 py-4 font-black uppercase tracking-tighter hover:bg-white cursor-pointer transition-colors">
-            <Link href="/projects">OUR PROJECTS</Link>
-          </button>
-          <button className="border-2 border-white text-white px-8 py-4 font-black uppercase tracking-tighter hover:bg-white hover:text-toh-navy cursor-pointer transition-all">
-            <Link href="/about">LEARN MORE</Link>
-          </button>
-          <button className="border-2 border-white text-white px-8 py-4 font-black uppercase tracking-tighter hover:bg-white hover:text-toh-navy cursor-pointer transition-all">
-            <Link href="/training#courses">VIEW COURSES</Link>
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button className="bg-toh-gold text-toh-navy px-8 py-4 font-black uppercase tracking-tighter hover:bg-white cursor-pointer transition-colors">
+              <Link href="/projects">OUR PROJECTS</Link>
+            </button>
+            <button className="border-2 border-white text-white px-8 py-4 font-black uppercase tracking-tighter hover:bg-white hover:text-toh-navy cursor-pointer transition-all">
+              <Link href="/about">LEARN MORE</Link>
+            </button>
+            <button className="border-2 border-white text-white px-8 py-4 font-black uppercase tracking-tighter hover:bg-white hover:text-toh-navy cursor-pointer transition-all">
+              <Link href="/training#courses">VIEW COURSES</Link>
+            </button>
+          </div>
         </motion.div>
       </div>
 

@@ -74,23 +74,23 @@ export default function Home() {
       <HeroSlider />
 
       {/* Workers Trained Counter */}
-      <FadeIn className="text-center m-16 mb-0 py-3 border border-toh-gold">
-        <h2 className="text-toh-navy text-3xl font-extrabold uppercase tracking-tight">
+      <FadeIn className="text-center mx-4 sm:mx-6 md:mx-16 mt-10 sm:mt-14 md:mt-16 py-3 border border-toh-gold">
+        <h2 className="text-toh-navy text-2xl sm:text-3xl font-extrabold uppercase tracking-tight">
           <Counter value={targetCounterValue} />+ Workers Trained
         </h2>
       </FadeIn>
 
       {/* Services Section */}
-      <section className="py-24 px-8 bg-white">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <FadeIn className="text-center mb-16">
-            <h2 className="text-toh-navy text-4xl font-black uppercase tracking-tight">
+            <h2 className="text-toh-navy text-3xl sm:text-4xl font-black uppercase tracking-tight">
               What We Do
             </h2>
             <div className="w-20 h-1 bg-toh-gold mx-auto mt-4"></div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             {[
               {
                 title: "Construction",
@@ -110,7 +110,7 @@ export default function Home() {
               <FadeIn
                 key={index}
                 delay={index * 0.2}
-                className="bg-white rounded-[1.5rem] p-10 text-left transition-all duration-300 ease-in-out border border-gray-200 border-t-[5px] border-t-toh-gold shadow-md relative overflow-hidden flex flex-col hover:-translate-y-2 hover:shadow-2xl h-full"
+                className="bg-white rounded-[1.5rem] p-6 sm:p-8 md:p-10 text-left transition-all duration-300 ease-in-out border border-gray-200 border-t-[5px] border-t-toh-gold shadow-md relative overflow-hidden flex flex-col hover:-translate-y-2 hover:shadow-2xl h-full"
               >
                 <div className="flex mb-4">
                   <img
@@ -138,10 +138,10 @@ export default function Home() {
       </section>
 
       {/* Legacy Stories Section */}
-      <section className="py-24 px-8 bg-toh-light">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 bg-toh-light">
         <div className="max-w-6xl mx-auto">
           <FadeIn className="text-center mb-16">
-            <h2 className="text-toh-navy text-4xl font-black uppercase tracking-tight">
+            <h2 className="text-toh-navy text-3xl sm:text-4xl font-black uppercase tracking-tight">
               Legacy Stories
             </h2>
             <div className="w-20 h-1 bg-toh-gold mx-auto mt-4 mb-6"></div>
@@ -235,9 +235,9 @@ export default function Home() {
         </div>
       </section>
 
-      <div id="contact-form" className="bg-gray-100 py-20">
-        <section className="px-8 pb-8">
-          <div className="max-w-6xl mx-auto bg-toh-light border border-toh-gold rounded-2xl p-8">
+      <div id="contact-form" className="bg-gray-100 py-16 sm:py-20">
+        <section className="px-4 sm:px-6 md:px-8 pb-6 sm:pb-8">
+          <div className="max-w-6xl mx-auto bg-toh-light border border-toh-gold rounded-2xl p-6 sm:p-8">
             {/* <h2 className="text-toh-navy text-2xl font-black mb-4">Vital Info</h2> */}
             <div className="grid md:grid-cols-2 gap-5 text-gray-700 leading-relaxed">
               <div>
@@ -256,8 +256,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="px-8 pb-20">
-          <div className="max-w-6xl mx-auto bg-white border border-gray-200 rounded-3xl shadow-sm p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <section className="px-4 sm:px-6 md:px-8 pb-16 sm:pb-20">
+          <div className="max-w-6xl mx-auto bg-white border border-gray-200 rounded-3xl shadow-sm p-6 sm:p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h2 className="text-toh-navy text-2xl font-black mb-2">Send Us a WhatsApp Message</h2>
               <p className="text-gray-600 leading-relaxed max-w-2xl">
@@ -269,9 +269,9 @@ export default function Home() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 bg-green-600 text-white px-8 py-4 rounded-full font-black uppercase tracking-wider hover:bg-green-700 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-3 bg-green-600 text-white px-6 sm:px-8 py-4 rounded-full font-black uppercase tracking-wider hover:bg-green-700 transition-all duration-300 w-full sm:w-auto"
             >
-              Send Us a Message
+              Message Us
             </a>
           </div>
         </section>

@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-toh-navy text-white mt-16">
-      <div className="max-w-6xl mx-auto px-8 py-14 grid md:grid-cols-3 gap-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-12 md:py-14 grid md:grid-cols-3 gap-10">
         <div>
           <h3 className="text-xl font-black text-toh-gold">TOHBATT</h3>
           <p className="mt-4 text-gray-300 leading-relaxed text-sm">
@@ -91,7 +91,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/15">
-        <div className="max-w-6xl mx-auto px-8 py-5 text-xs text-gray-300 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-5 text-xs text-gray-300 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
           <p>
             {new Date().getFullYear()} TOHBATT. All rights reserved.
           </p>
