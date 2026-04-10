@@ -1,18 +1,40 @@
 import "./globals.css";
+import webPreview from "./web-preview.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
+  metadataBase: new URL("https://tohbatt-web.vercel.app"),
   title: "TOHBATT - Excellence in Construction & Training",
-  description: "Providing world-class technical training and industrial construction services since 2013. Building legacies across Ghana and beyond.",
+  description: "TOHBATT builds skilled professionals and delivers trusted construction training and services across Ghana.",
   keywords: ["Construction Training", "Technical Education", "Industrial Building", "TOHBATT", "Ghana Engineering", "Trust of Hope Building and Training Technology"],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "TOHBATT | Engineering & Training Excellence",
-    description: "Industrial construction and professional training services.",
-    url: "https://tohbatt-web.vercel.app", // Change to your custom domain later
+    description: "TOHBATT builds skilled professionals and delivers trusted construction training and services across Ghana.",
+    url: "/",
     siteName: "TOHBATT",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: webPreview.src,
+        width: 1200,
+        height: 630,
+        alt: "TOHBATT social preview image",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TOHBATT | Engineering & Training Excellence",
+    description: "TOHBATT builds skilled professionals and delivers trusted construction training and services across Ghana.",
+    images: [webPreview.src],
+  },
+  other: {
+    "telegram:channel": "TOHBATT",
   },
 };
 
