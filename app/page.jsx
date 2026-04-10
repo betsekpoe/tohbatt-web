@@ -261,7 +261,7 @@ export default function Home() {
             <div>
               <h2 className="text-toh-navy text-2xl font-black mb-2">Send Us a WhatsApp Message</h2>
               <p className="text-gray-600 leading-relaxed max-w-2xl">
-                Use WhatsApp for quick enquiries, training applications, or general contact while we keep the form hidden for now.
+                Have any questions or enquiries? Reach out to us directly on WhatsApp and we'll be happy to assist you.
               </p>
               <p className="mt-3 text-sm font-semibold text-gray-500">+233 24 573 3495</p>
             </div>
