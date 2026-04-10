@@ -68,7 +68,34 @@ export default function TrainingPage() {
       </FadeIn>
 
       {/* Additional Content */}
+      <div id="courses"></div>
       <div className="max-w-4xl mx-auto mt-24">
+        <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm mb-12">
+          <h2 className="text-2xl font-black text-toh-navy mb-4">Courses Offering</h2>
+          <ul className="list-decimal list-inside text-gray-700 leading-relaxed space-y-2">
+            <li>Masonry, Tilling and Steel bending -- All in one course</li>
+          </ul>
+        </div>
+
+        <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm mb-12">
+          <h2 className="text-2xl font-black text-toh-navy mb-4">Partnership Courses</h2>
+          <ul className="list-decimal list-inside text-gray-700 leading-relaxed space-y-2">
+            <li>General Carpentry</li>
+            <li>Glass Fabrication</li>
+            <li>Interior Decoration (POP installation, Painting , Skimming and Graffiato)</li>
+            <li>Metal Fabrication (wielding)</li>
+            <li>Electrical Engineering and CCT installation</li>
+            <li>Plumbing and Bio-Digester</li>
+          </ul>
+        </div>
+
+        <div className="bg-toh-light border border-toh-gold rounded-2xl p-8 mb-16">
+          <h2 className="text-2xl font-black text-toh-navy mb-4">Probation Period</h2>
+          <p className="text-gray-700 leading-relaxed">
+            Thirty (30) working days probationer test will be conducted, before signing an agreement form.
+          </p>
+        </div>
+
         <h2 className="text-3xl font-black text-toh-navy text-center mb-12">Why Choose TOHBATT?</h2>
         
         <div className="grid md:grid-cols-3 gap-6">

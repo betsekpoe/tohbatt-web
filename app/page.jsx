@@ -235,7 +235,26 @@ export default function Home() {
         </div>
       </section>
 
-      <div id="contact-form">
+      <div id="contact-form" className="bg-gray-100 py-20">
+        <section className="px-8 pb-8">
+          <div className="max-w-6xl mx-auto bg-toh-light border border-toh-gold rounded-2xl p-8">
+            {/* <h2 className="text-toh-navy text-2xl font-black mb-4">Vital Info</h2> */}
+            <div className="grid md:grid-cols-2 gap-5 text-gray-700 leading-relaxed">
+              <div>
+                <p className="font-bold text-toh-navy">Contact Numbers</p>
+                <p>Office: 0249 886 896 / 0302 966 527</p>
+                <p>Director: 0245 733 495 / 0279 711 120</p>
+              </div>
+              <div>
+                <p><span className="font-bold text-toh-navy">GPS:</span> GS 0558 5658</p>
+                <p>R657 West End University Road</p>
+                <Link href="/about" className="inline-block mt-3 font-bold uppercase text-xs tracking-wider text-toh-navy border-b-2 border-toh-gold">
+                  View full institutional info
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
         <ContactForm/>
       </div>
     </main>

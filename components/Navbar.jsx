@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,7 +11,16 @@ export default function Navbar() {
     <nav className="flex justify-between items-center px-8 py-6 bg-white border-b border-gray-100 sticky top-0 z-50">
       <Link href="/">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-toh-navy rounded-lg flex items-center justify-center text-toh-gold font-bold text-xl">T</div>
+          <div className="w-10 h-10 rounded-lg overflow-hidden border border-gray-200 shrink-0 bg-white">
+            <Image
+              src="/icon.png"
+              alt="TOHBATT logo"
+              width={40}
+              height={40}
+              className="w-full h-full object-contain"
+              priority
+            />
+          </div>
           <span className="text-2xl font-black tracking-tighter text-toh-navy">TOHBATT</span>
         </div>
       </Link>

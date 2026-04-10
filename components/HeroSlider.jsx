@@ -84,6 +84,9 @@ export default function HeroSlider() {
           <button className="border-2 border-white text-white px-8 py-4 font-black uppercase tracking-tighter hover:bg-white hover:text-toh-navy cursor-pointer transition-all">
             <Link href="/about">LEARN MORE</Link>
           </button>
+          <button className="border-2 border-white text-white px-8 py-4 font-black uppercase tracking-tighter hover:bg-white hover:text-toh-navy cursor-pointer transition-all">
+            <Link href="/training#courses">VIEW COURSES</Link>
+          </button>
         </motion.div>
       </div>
 
