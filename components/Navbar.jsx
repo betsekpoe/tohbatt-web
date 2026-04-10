@@ -30,7 +30,7 @@ export default function Navbar() {
         <Link href="/" className="hover:text-toh-gold transition-colors">Home</Link>
         <Link href="/projects" className="hover:text-toh-gold transition-colors">Projects</Link>
         <Link href="/gallery" className="hover:text-toh-gold transition-colors">Gallery</Link>
-        <Link href="/training" className="hover:text-toh-gold transition-colors">Training</Link>
+        <Link href="/training" className="hover:text-toh-gold transition-colors">Courses</Link>
         <Link href="/about" className="hover:text-toh-gold transition-colors">About</Link>
       </div>
 

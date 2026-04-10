@@ -1,11 +1,9 @@
 "use client"
-import { registerStudent } from "@/app/actions";
 import { useEffect, useState } from "react";
 import FadeIn from "@/components/FadeIn"; // Import FadeIn
 import { getSiteAssets } from "@/services/sanityService";
 
 export default function TrainingPage() {
-  const [status, setStatus] = useState(null);
   const [prospectusUrl, setProspectusUrl] = useState(null);
 
   useEffect(() => {
@@ -14,11 +12,7 @@ export default function TrainingPage() {
     });
   }, []);
 
-  async function handleRegister(formData) {
-    const result = await registerStudent(formData);
-    if (result.success) setStatus("success");
-    else setStatus("error");
-  }
+  const whatsappHref = "https://wa.me/233245733495?text=Hello%20TOHBATT,%20I%20would%20like%20to%20apply%20for%20training.%20Please%20share%20the%20next%20steps.";
 
   return (
     <main className="min-h-screen bg-gray-50 py-20 px-8">
@@ -38,46 +32,34 @@ export default function TrainingPage() {
         </div>
 
 
-        {/* Form Side */}
-        <div className="p-12">
-          {status === "success" ? (
-            <div className="text-center py-10">
-              <div className="text-5xl mb-4">🎉</div>
-              <h2 className="text-2xl font-bold text-toh-navy">Application Received!</h2>
-              <p className="text-gray-600 mt-2">The TOHBATT registrar will contact you shortly.</p>
+        {/* Apply Now Side */}
+        <div className="p-12 flex items-center">
+          <div className="w-full bg-toh-light border border-toh-gold rounded-2xl p-8 md:p-10 text-center">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-toh-gold/20 text-toh-navy text-2xl mb-5">
+              ☎
             </div>
-          ) : (
-            <form action={handleRegister} className="space-y-4">
-              <h2 className="text-xl font-bold text-toh-navy mb-4">Enrollment Form</h2>
-              <input name="fullName" placeholder="Full Name" className="w-full p-3 border rounded-md" required />
-              <input name="email" type="email" placeholder="Email Address" className="w-full p-3 border rounded-md" required />
-              <input name="phone" placeholder="Phone Number" className="w-full p-3 border rounded-md" required />
-              
-              <select name="course" className="w-full p-3 border rounded-md bg-white" required>
-                <option value="">Select Course</option>
-                <option value="Bio-gas">Bio-gas Construction</option>
-                <option value="Masonry">Professional Masonry</option>
-                <option value="Agribusiness">Agribusiness</option>
-              </select>
-
-              <select name="location" className="w-full p-3 border rounded-md bg-white" required>
-                <option value="">Primary Location</option>
-                <option value="Ghana">Ghana</option>
-                <option value="Liberia">Liberia</option>
-              </select>
-
-              <button className="w-full bg-toh-gold text-toh-navy py-3 font-black uppercase tracking-widest hover:bg-yellow-500 transition-all rounded-md">
-                Submit Application
-              </button>
-              {status === "error" && <p className="text-red-500 text-sm text-center">Registration failed. Please try again.</p>}
-            </form>
-          )}
+            <h2 className="text-2xl font-black text-toh-navy mb-3">Apply Now</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              Ready to enroll? Send us a WhatsApp message and we will guide you through the next steps.
+            </p>
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 w-full bg-green-600 text-white py-4 px-6 rounded-md font-black uppercase tracking-widest hover:bg-green-700 transition-all"
+            >
+              {/* <span className="text-lg">WhatsApp</span> */}
+              <span>Send Us a Message</span>
+            </a>
+            <p className="text-sm text-gray-500 mt-4">
+              +233 24 573 3495
+            </p>
+          </div>
         </div>
       </FadeIn>
 
       {/* Additional Content */}
-      <div id="courses"></div>
-      <div className="max-w-4xl mx-auto mt-24">
+      <div id="courses" className="max-w-4xl mx-auto mt-24 scroll-mt-24">
         <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm mb-12">
           <h2 className="text-2xl font-black text-toh-navy mb-4">Courses Offering</h2>
           <ul className="list-decimal list-inside text-gray-700 leading-relaxed space-y-2">

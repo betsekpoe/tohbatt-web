@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { getPosts } from "@/services/sanityService";
 import { urlFor } from "@/lib/sanity";
-import ContactForm from "@/components/ContactForm";
 import HeroSlider from "@/components/HeroSlider";
 import FadeIn from "@/components/FadeIn";
 
@@ -33,6 +32,7 @@ function Counter({ value }) {
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
+  const whatsappHref = "https://wa.me/233245733495?text=Hello%20TOHBATT,%20I%20would%20like%20to%20make%20an%20enquiry.%20Please%20share%20the%20next%20steps.";
 
   useEffect(() => {
     getPosts().then(setPosts);
@@ -244,18 +244,37 @@ export default function Home() {
                 <p className="font-bold text-toh-navy">Contact Numbers</p>
                 <p>Office: 0249 886 896 / 0302 966 527</p>
                 <p>Director: 0245 733 495 / 0279 711 120</p>
+                <p>WhatsApp: +233 24 573 3495</p>
               </div>
               <div>
                 <p><span className="font-bold text-toh-navy">GPS:</span> GS 0558 5658</p>
                 <p>R657 West End University Road</p>
                 <Link href="/about" className="inline-block mt-3 font-bold uppercase text-xs tracking-wider text-toh-navy border-b-2 border-toh-gold">
-                  View full institutional info
+                  View full info
                 </Link>
               </div>
             </div>
           </div>
         </section>
-        <ContactForm/>
+        <section className="px-8 pb-20">
+          <div className="max-w-6xl mx-auto bg-white border border-gray-200 rounded-3xl shadow-sm p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <h2 className="text-toh-navy text-2xl font-black mb-2">Send Us a WhatsApp Message</h2>
+              <p className="text-gray-600 leading-relaxed max-w-2xl">
+                Use WhatsApp for quick enquiries, training applications, or general contact while we keep the form hidden for now.
+              </p>
+              <p className="mt-3 text-sm font-semibold text-gray-500">+233 24 573 3495</p>
+            </div>
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 bg-green-600 text-white px-8 py-4 rounded-full font-black uppercase tracking-wider hover:bg-green-700 transition-all duration-300"
+            >
+              Send Us a Message
+            </a>
+          </div>
+        </section>
       </div>
     </main>
   );

@@ -1,6 +1,4 @@
 "use client"
-import Image from "next/image";
-import { motion } from "framer-motion";
 import FadeIn from "@/components/FadeIn"; // Import FadeIn
 
 export default function AboutPage() {
@@ -107,6 +105,16 @@ export default function AboutPage() {
                 <div>
                   <p className="text-toh-gold font-bold uppercase tracking-wide text-xs">Director</p>
                   <p className="text-white font-semibold">0245 733 495 / 0279 711 120</p>
+                </div>
+              </div>
+
+              <div className="bg-white/8 border border-white/15 rounded-xl p-4 flex items-start gap-3">
+                <svg className="w-5 h-5 mt-0.5 shrink-0 text-toh-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.129a11.042 11.042 0 005.516 5.516l1.129-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <div>
+                  <p className="text-toh-gold font-bold uppercase tracking-wide text-xs">WhatsApp</p>
+                  <p className="text-white font-semibold">+233 24 573 3495</p>
                 </div>
               </div>
 

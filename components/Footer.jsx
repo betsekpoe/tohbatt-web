@@ -34,7 +34,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/training" className="text-gray-200 hover:text-toh-gold transition-colors">
-                Training
+                Courses
               </Link>
             </li>
             <li>
@@ -66,6 +66,12 @@ export default function Footer() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.51 0 4.866.655 6.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0zm6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span><span className="font-semibold text-white">Director:</span> 0245 733 495 / 0279 711 120</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <svg className="w-4 h-4 mt-0.5 shrink-0 text-toh-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.129a11.042 11.042 0 005.516 5.516l1.129-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span><span className="font-semibold text-white">WhatsApp:</span> +233 24 573 3495</span>
             </li>
             <li className="flex items-start gap-2">
               <svg className="w-4 h-4 mt-0.5 shrink-0 text-toh-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

@@ -109,7 +109,8 @@ export default function GalleryPage() {
                   <button
                     type="button"
                     onClick={() => openImage(index)}
-                    className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-left cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-toh-gold"
+                    aria-label={`Open gallery image ${index + 1}`}
+                    className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-left cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-toh-gold focus-visible:ring-offset-2 focus-visible:ring-offset-toh-light"
                   >
                     <div className="h-64 bg-gray-100 overflow-hidden">
                       <img
@@ -158,7 +159,7 @@ export default function GalleryPage() {
               <button
                 type="button"
                 onClick={goToPrevious}
-                className="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 z-10 bg-white/15 hover:bg-white/30 text-white rounded-full w-12 h-12 flex items-center justify-center transition-colors"
+                className="absolute left-2 md:left-5 top-1/2 -translate-y-1/2 z-10 bg-white/15 hover:bg-white/30 text-white rounded-full w-11 h-11 md:w-12 md:h-12 flex items-center justify-center transition-colors"
                 aria-label="Previous image"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,7 +170,7 @@ export default function GalleryPage() {
               <button
                 type="button"
                 onClick={goToNext}
-                className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 z-10 bg-white/15 hover:bg-white/30 text-white rounded-full w-12 h-12 flex items-center justify-center transition-colors"
+                className="absolute right-2 md:right-5 top-1/2 -translate-y-1/2 z-10 bg-white/15 hover:bg-white/30 text-white rounded-full w-11 h-11 md:w-12 md:h-12 flex items-center justify-center transition-colors"
                 aria-label="Next image"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
